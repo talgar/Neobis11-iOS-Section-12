@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,24 +40,79 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="XTX-0r-c3D">
+                                <rect key="frame" x="338" y="506" width="60" height="216"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ES-z0-RZI" userLabel="walking">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1xH-MU-u1c"/>
+                                            <constraint firstAttribute="width" constant="60" id="wHK-4i-ePc"/>
+                                        </constraints>
+                                        <state key="normal" image="walking"/>
+                                        <connections>
+                                            <action selector="stepsBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0k-0T-IFX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ack-Vy-h5o" userLabel="car">
+                                        <rect key="frame" x="0.0" y="78" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CSN-tK-55D"/>
+                                            <constraint firstAttribute="width" constant="60" id="f2S-W7-Bex"/>
+                                        </constraints>
+                                        <state key="normal" image="car"/>
+                                        <connections>
+                                            <action selector="carBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SWu-zb-nSf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epR-DP-dCC">
+                                        <rect key="frame" x="0.0" y="156" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="kef-N7-IQz"/>
+                                            <constraint firstAttribute="height" constant="60" id="rVs-5R-OnE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="location"/>
+                                        <connections>
+                                            <action selector="locationBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHT-SH-Cbn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJW-8L-YHU">
+                                <rect key="frame" x="16" y="52" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="A0J-TQ-PFA"/>
+                                    <constraint firstAttribute="height" constant="40" id="PWU-nD-Nes"/>
+                                </constraints>
+                                <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="cancelBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rHl-B1-rOx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ttG-gp-bG2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6rf-6I-Qlu"/>
+                            <constraint firstItem="eJW-8L-YHU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="76Y-62-cfw"/>
                             <constraint firstItem="ttG-gp-bG2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ky0-rb-1M7"/>
                             <constraint firstItem="ttG-gp-bG2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LIX-OS-cVI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FrF-5n-zTL" secondAttribute="trailing" id="VjK-p8-JT5"/>
                             <constraint firstItem="NFI-VL-plV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="ZYD-OD-pcw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XTX-0r-c3D" secondAttribute="trailing" constant="16" id="Zld-pv-sZh"/>
+                            <constraint firstItem="eJW-8L-YHU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dEU-bV-KzU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FrF-5n-zTL" secondAttribute="bottom" id="jOJ-hm-LxO"/>
                             <constraint firstItem="NFI-VL-plV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lTD-DA-Pet"/>
+                            <constraint firstItem="FrF-5n-zTL" firstAttribute="top" secondItem="XTX-0r-c3D" secondAttribute="bottom" constant="100" id="mot-qd-n3K"/>
                             <constraint firstItem="FrF-5n-zTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oIZ-S4-WJn"/>
                             <constraint firstItem="ttG-gp-bG2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sB6-5l-S18"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="FrF-5n-zTL" id="3ei-mb-Xyj"/>
+                        <outlet property="carBtn" destination="Ack-Vy-h5o" id="Dau-Bm-CIN"/>
                         <outlet property="mapView" destination="ttG-gp-bG2" id="xoB-nr-qLd"/>
+                        <outlet property="stepsBtn" destination="4ES-z0-RZI" id="tvV-7H-bej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,7 +121,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cancel" width="50" height="50"/>
+        <image name="car" width="90" height="90"/>
+        <image name="location" width="128" height="128"/>
         <image name="pin" width="48" height="48"/>
+        <image name="walking" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
