@@ -33,6 +33,7 @@ class MapVC: UIViewController {
         carBtn.layer.cornerRadius = 16
     }
 
+    //MARK: - BUTTONS
     
     @IBAction func stepsBTN(_ sender: Any) {
         transportType = true
@@ -53,6 +54,7 @@ class MapVC: UIViewController {
         removeDirections()
     }
     
+    //MARK: - LOCATION
     
     func setUpLocationManager() {
         locationManager.delegate = self
@@ -111,7 +113,7 @@ class MapVC: UIViewController {
         return CLLocation(latitude: latidute, longitude: longitude)
     }
     
-    
+    //MARK:-DIRECTIONS
     
     func getDirections() {
         
